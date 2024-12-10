@@ -82,12 +82,17 @@ const getCountryAndNeighbour = function (country) {
 
     if (!neighbour) return;
 
-    const request = new XMLHttpRequest();
-    request.open(
+    const request2 = new XMLHttpRequest();
+    request2.open(
       "GET",
       `https://countries-api-836d.onrender.com/countries/${country}`
     );
-    request.send();
+    request2.send();
+
+    request2.addEventListener("load", function () {
+      const data2 = JSON.parse(this.responseText);
+      console.log(data2);
+    });
   });
 };
 getCountryAndNeighbour("portugal");
