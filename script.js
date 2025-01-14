@@ -123,13 +123,20 @@
 // whereAmI(-22.403, 54.345);
 /////////////////////////////////////////////////////////////
 
-console.log("Test start");
-setTimeout(() => console.log("0 sec timer"), 0);
+// console.log("Test start");
+// setTimeout(() => console.log("0 sec timer"), 0);
 
-Promise.resolve("Resolved promise 1").then((res) => console.log(res));
+// Promise.resolve("Resolved promise 1").then((res) => console.log(res));
 
-Promise.resolve("Resolved promise 2").then((res) => {
-  for (let i = 0; i < 1000; i++) {}
-  console.log(res);
+// Promise.resolve("Resolved promise 2").then((res) => {
+//   for (let i = 0; i < 1000; i++) {}
+//   console.log(res);
+// });
+// console.log("Test end");
+/////////////////////////////////////////////////////////////
+
+const lotteryPromise = new Promise(function (resolve, reject) {
+  if (Math.random() >= 0.5) {
+    resolve();
+  }
 });
-console.log("Test end");
