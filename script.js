@@ -136,9 +136,14 @@
 /////////////////////////////////////////////////////////////
 
 const lotteryPromise = new Promise(function (resolve, reject) {
-  if (Math.random() >= 0.5) {
-    resolve("you win");
-  } else {
-    reject();
-  }
+  console.log("lottery draw is happening");
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      resolve("you win");
+    } else {
+      reject(new Error("You lost your money"));
+    }
+  }, 2000);
 });
+
+lottertPromise.then((res) => console.log(res)).catch((err) => console.log(err));
