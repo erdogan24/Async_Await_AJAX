@@ -105,15 +105,26 @@
 
 //////////////////////////////////////////////////////////
 
-const whereAmI = function (lat, lng) {
-  fetch(`https://geocode.xyz/${lat},${lng}?
-geoit=json`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      console.log(`You are in ${data.city},${data.country}`);
-    });
-};
-whereAmI(52.503, 14.345);
-whereAmI(32.703, 34.345);
-whereAmI(-22.403, 54.345);
+// const whereAmI = function (lat, lng) {
+//   fetch(`https://geocode.xyz/${lat},${lng}?
+// geoit=json`)
+//     .then((res) => {
+//       if (!res.ok) throw new Error(`problem with geocoding ${res.status}`);
+//       return res.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//       console.log(`You are in ${data.city},${data.country}`);
+//     })
+//     .catch((err) => console.error(`${err.message}`));
+// };
+// whereAmI(52.503, 14.345);
+// whereAmI(32.703, 34.345);
+// whereAmI(-22.403, 54.345);
+/////////////////////////////////////////////////////////////
+
+console.log("Test start");
+setTimeout(() => console.log("0 sec timer"), 0);
+
+Promise.resolve("Resolved promise 1").then((res) => console.log(res));
+console.log("Test end");
