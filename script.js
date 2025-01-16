@@ -147,3 +147,9 @@ const lotteryPromise = new Promise(function (resolve, reject) {
 });
 
 lottertPromise.then((res) => console.log(res)).catch((err) => console.log(err));
+
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve);
+  });
+};
