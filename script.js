@@ -150,6 +150,10 @@ lottertPromise.then((res) => console.log(res)).catch((err) => console.log(err));
 
 const wait = function (seconds) {
   return new Promise(function (resolve) {
-    setTimeout(resolve);
+    setTimeout(resolve, seconds * 1000);
   });
 };
+wait(2).then(() => {
+  console.log(" I waited for 2 seconds");
+  return wait(1);
+});
