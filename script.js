@@ -192,3 +192,7 @@ const createImage = function (imgPath) {
     });
   });
 };
+
+createImage("img").then((img) => {
+  console.log("Image 1 loaded");
+});
