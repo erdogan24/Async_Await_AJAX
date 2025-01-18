@@ -161,15 +161,26 @@
 //   .then(() => console.log(" I waited for 1 second"));
 /////////////////////////////////////////////////////////////
 
-const getPosition = function () {
-  return new Promise(function (resolve, reject) {
-    // navigator.geolocation.getCurrentPosition(
-    //   (position) => resolve(position),
-    //   (err) => reject(err)
-    // );
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     // navigator.geolocation.getCurrentPosition(
+//     //   (position) => resolve(position),
+//     //   (err) => reject(err)
+//     // );
 
-    navigator.geolocation.getCurrentPosition(resolve, reject);
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
+
+// getPosition().then((pos) => console.log(pos));
+
+/////////////////////////////////////////////////////////////
+
+const imgContainer = document.querySelector(".images");
+
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const img = document.createElement("img");
+    img.src = imgPath;
   });
 };
-
-getPosition().then((pos) => console.log(pos));
